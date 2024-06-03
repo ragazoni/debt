@@ -8,7 +8,7 @@ import (
 	"github.com/ragazoni/debt/internal/models"
 )
 
-func AddDebt(c fiber.Ctx) error {
+func addDebt(c fiber.Ctx) error {
 	var debts models.Debt
 
 	if err := c.Bind().Body(&debts); err != nil {
@@ -30,7 +30,7 @@ func AddDebt(c fiber.Ctx) error {
 	})
 }
 
-func ListDebts(c fiber.Ctx) error {
+func listDebts(c fiber.Ctx) error {
 	var document []models.Debt
 
 	err := db.FindByUser("debts", &document)

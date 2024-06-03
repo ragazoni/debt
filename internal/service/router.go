@@ -9,8 +9,8 @@ func SetRouter(r fiber.Router) {
 	debts := r.Group("/debts")
 
 	debts.Use("/", middleware.AuthRequired)
-	debts.Post("/", AddDebt)
-	debts.Get("/", ListDebts)
-	debts.Get("/score", GetScore)
+	debts.Post("/", addDebt)
+	debts.Get("/", listDebts)
+	debts.Get("/score", getScore)
 
 }

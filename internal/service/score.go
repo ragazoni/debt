@@ -9,7 +9,7 @@ import (
 	"github.com/ragazoni/debt/internal/models"
 )
 
-func GetScore(c fiber.Ctx) error {
+func getScore(c fiber.Ctx) error {
 	var document []models.Debt
 
 	cursor, err := db.Find("debts", &document)
